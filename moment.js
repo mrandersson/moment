@@ -637,6 +637,12 @@
 
         zone : function () {
             return this._d.getTimezoneOffset();
+        },
+
+        daysInMonth: function () {
+            var m = [31,28,31,30,31,30,31,31,30,31,30,31];
+            if (this.month() == 1 && this.isLeapYear()) return m[1] + 1;
+            return m[this.month()];
         }
     };
 
